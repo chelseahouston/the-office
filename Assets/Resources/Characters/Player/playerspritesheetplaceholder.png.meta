@@ -294,8 +294,8 @@ TextureImporter:
       name: playerspritesheetplaceholder_8
       rect:
         serializedVersion: 2
-        x: 128
-        y: 128
+        x: 0
+        y: 96
         width: 16
         height: 32
       alignment: 0
@@ -315,8 +315,8 @@ TextureImporter:
       name: playerspritesheetplaceholder_9
       rect:
         serializedVersion: 2
-        x: 144
-        y: 128
+        x: 16
+        y: 96
         width: 16
         height: 32
       alignment: 0
@@ -336,7 +336,7 @@ TextureImporter:
       name: playerspritesheetplaceholder_10
       rect:
         serializedVersion: 2
-        x: 0
+        x: 32
         y: 96
         width: 16
         height: 32
@@ -357,7 +357,7 @@ TextureImporter:
       name: playerspritesheetplaceholder_11
       rect:
         serializedVersion: 2
-        x: 16
+        x: 48
         y: 96
         width: 16
         height: 32
@@ -378,7 +378,7 @@ TextureImporter:
       name: playerspritesheetplaceholder_12
       rect:
         serializedVersion: 2
-        x: 32
+        x: 64
         y: 96
         width: 16
         height: 32
@@ -399,7 +399,7 @@ TextureImporter:
       name: playerspritesheetplaceholder_13
       rect:
         serializedVersion: 2
-        x: 48
+        x: 80
         y: 96
         width: 16
         height: 32
@@ -420,7 +420,7 @@ TextureImporter:
       name: playerspritesheetplaceholder_14
       rect:
         serializedVersion: 2
-        x: 64
+        x: 96
         y: 96
         width: 16
         height: 32
@@ -433,27 +433,6 @@ TextureImporter:
       bones: []
       spriteID: 655fa52460140404d8de1f40d0fa6316
       internalID: -1310388484
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: playerspritesheetplaceholder_15
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 96
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f97c6ed77976c0b4eb4a2ef4b82112ee
-      internalID: 556622985
       vertices: []
       indices: 
       edges: []
@@ -476,7 +455,6 @@ TextureImporter:
       playerspritesheetplaceholder_12: 475269345
       playerspritesheetplaceholder_13: 1684353026
       playerspritesheetplaceholder_14: -1310388484
-      playerspritesheetplaceholder_15: 556622985
       playerspritesheetplaceholder_2: 741513035
       playerspritesheetplaceholder_3: 312588586
       playerspritesheetplaceholder_4: -1667055167
