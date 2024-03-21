@@ -29,10 +29,6 @@ public class TrophyData : MonoBehaviour
     void Start()
     {
         ResetTrophies();
-
-        // test 
-        TestTrophy("Trophy01");
-
         LoadTrophies();
     }
 
@@ -45,6 +41,7 @@ public class TrophyData : MonoBehaviour
         {
             t.SetActive(false);
         }
+        SaveTrophies(); // save the reset trophies
 
     }
 
@@ -65,7 +62,8 @@ public class TrophyData : MonoBehaviour
 
     public void AddTrophyToWonTrophies(string trophy)
     {
-       WonTrophies.Add(trophy);
+        WonTrophies.Add(trophy);
+        SaveTrophies();
     }
 
     // save the user trophies as string
@@ -88,7 +86,7 @@ public class TrophyData : MonoBehaviour
         else //if not, make a new one and save it (for first gameplay)
         {
             ResetTrophies(); // reset the won trophies to none
-            SaveTrophies(); // save the reset trophies
+            
         }
 
         // for each trophy won set it's game object to true
@@ -129,13 +127,9 @@ public class TrophyData : MonoBehaviour
         return null;
     }
 
-    public void TestTrophy(string trophy)
+    private void OnApplicationQuit()
     {
-        AddTrophyToWonTrophies(trophy);
+        SaveTrophies();
     }
-
-
-
-
 
 }
