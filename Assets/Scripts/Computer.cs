@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Computer : MonoBehaviour
 {
     public GameObject computerPanel;
     public bool nearComputer;
     public TextMeshProUGUI interactionE, backText;
+    public SceneManagement sceneManagement;
 
     // Start is called before the first frame update
     void Start()
     {
+        sceneManagement = GameObject.Find("SceneManager").GetComponent<SceneManagement>();
         computerPanel.SetActive(false);
         nearComputer = false;
         if (interactionE != null)
@@ -53,7 +54,7 @@ public class Computer : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Main Office");
+        sceneManagement.LoadAndSet("Main Office");
     }
 
     public void ExitGame()
