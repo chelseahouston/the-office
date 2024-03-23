@@ -1924,7 +1924,7 @@ GameObject:
   - component: {fileID: 721810014}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1990,7 +1990,7 @@ Transform:
   m_GameObject: {fileID: 721810008}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.62, y: -0.83, z: 5.207267}
+  m_LocalPosition: {x: 4.17, y: -0.83, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2108,6 +2108,13 @@ MonoBehaviour:
   rb: {fileID: 721810012}
   animator: {fileID: 721810013}
   playerMovement: {fileID: 721810014}
+  cubiclePosition: {x: 0, y: 0, z: 0}
+  mainOfficePosition: {x: 0, y: 0, z: 0}
+  hallwayPosition: {x: 0, y: 0, z: 0}
+  conferenceRoomPosition: {x: 0, y: 0, z: 0}
+  bathroomPosition: {x: 0, y: 0, z: 0}
+  cafePosition: {x: 0, y: 0, z: 0}
+  bossOfficePosition: {x: 0, y: 0, z: 0}
 --- !u!1 &774885407
 GameObject:
   m_ObjectHideFlags: 0
@@ -2174,7 +2181,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.107736945, y: -0.99498105}
+  m_Offset: {x: -0.107736945, y: -0.9533187}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2185,7 +2192,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7478199, y: 1.1394246}
+  m_Size: {x: 1.7478199, y: 1.2227492}
   m_EdgeRadius: 0
 --- !u!61 &774885410
 BoxCollider2D:
@@ -2248,6 +2255,7 @@ MonoBehaviour:
   nearComputer: 0
   interactionE: {fileID: 943199111}
   backText: {fileID: 1170177895}
+  sceneManagement: {fileID: 1491660984}
 --- !u!1 &894841361
 GameObject:
   m_ObjectHideFlags: 0
@@ -2453,6 +2461,7 @@ GameObject:
   - component: {fileID: 913342239}
   - component: {fileID: 913342241}
   - component: {fileID: 913342240}
+  - component: {fileID: 913342242}
   m_Layer: 0
   m_Name: Data
   m_TagString: Untagged
@@ -2510,6 +2519,20 @@ MonoBehaviour:
   T9: {fileID: 1865055317}
   trophyGameObjects: []
   WonTrophies: []
+--- !u!114 &913342242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913342238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeef5777c7ec5954b9eae0d942744328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueDB: []
+  imagePath: Assets/Resources/Characters/SpeechImages/
 --- !u!1 &928757517
 GameObject:
   m_ObjectHideFlags: 0
@@ -3924,6 +3947,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1475062655}
   m_CullTransparentMesh: 1
+--- !u!1 &1491660982
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1491660983}
+  - component: {fileID: 1491660984}
+  m_Layer: 0
+  m_Name: SceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1491660983
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491660982}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.4836911, y: -0.59677565, z: -2.8574252}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1491660984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491660982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65d236675b7e8d34e875bef967b2d4a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!1 &1526216775
 GameObject:
   m_ObjectHideFlags: 0
@@ -6694,3 +6762,4 @@ SceneRoots:
   - {fileID: 721810010}
   - {fileID: 983522168}
   - {fileID: 913342239}
+  - {fileID: 1491660983}
