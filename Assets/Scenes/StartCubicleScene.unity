@@ -2461,6 +2461,7 @@ GameObject:
   - component: {fileID: 913342239}
   - component: {fileID: 913342241}
   - component: {fileID: 913342240}
+  - component: {fileID: 913342242}
   m_Layer: 0
   m_Name: Data
   m_TagString: Untagged
@@ -2518,6 +2519,20 @@ MonoBehaviour:
   T9: {fileID: 1865055317}
   trophyGameObjects: []
   WonTrophies: []
+--- !u!114 &913342242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913342238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeef5777c7ec5954b9eae0d942744328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueDB: []
+  imagePath: Assets/Resources/Characters/SpeechImages/
 --- !u!1 &928757517
 GameObject:
   m_ObjectHideFlags: 0

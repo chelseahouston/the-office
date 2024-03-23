@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     public Animator animator;
     public StopStartPlayerMovement playerMovement;
     public Vector3 cubiclePosition, mainOfficePosition, hallwayPosition, conferenceRoomPosition, bathroomPosition, cafePosition, bossOfficePosition;
+    public SpeechInteraction speechInteraction;
+    public int interaction;
 
     private void Awake()
     {
@@ -31,6 +33,7 @@ public class Player : MonoBehaviour
     {
         SetStartingPositions();
         transform.position = cubiclePosition;
+        interaction = 0;
     }
 
     // Update is called once per frame
@@ -50,6 +53,16 @@ public class Player : MonoBehaviour
             animator.SetFloat("Horizontal", horizontalInput);
             animator.SetFloat("Speed", movement.sqrMagnitude);
         }
+
+        if (Input.GetKeyDown(KeyCode.E) && interaction!=0)
+        {
+            speechInteraction.Speech(interaction);
+        }
+    }
+
+    public void setSpeechPanel()
+    {
+        speechInteraction = GameObject.Find("SpeechPanel").GetComponent<SpeechInteraction>();
     }
 
     public void SetStartingPositions()
@@ -64,5 +77,34 @@ public class Player : MonoBehaviour
         bossOfficePosition = new Vector3(-4.09f, -0.83f, 0f);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+            switch (collision.name)
+            {
+                case "JohnDesk":
+                interaction = 1;
+                break;
 
+                case "JaneDesk":
+                interaction = 2;
+                break;
+
+                case "SamDesk":
+                interaction = 3;
+                break;
+
+                case "EmilyDesk":
+                interaction = 4;
+                break;
+
+                case "CharlieDesk":
+                interaction = 5;
+                break;
+            }
+        }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        interaction = 0;
+    }
 }

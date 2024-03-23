@@ -4,12 +4,16 @@ public class MainOffice : MonoBehaviour
 {
     public GameObject PausePanel;
     public bool paused;
+    public Player player;
 
     // Start is called before the first frame update
     void Start()
     {
         PausePanel.SetActive(false);
         paused = false;
+        player = GameObject.Find("Player").GetComponent<Player>();
+        player.setSpeechPanel();
+
     }
 
     // Update is called once per frame
