@@ -29,6 +29,19 @@ public class TrophyData : MonoBehaviour
     void Start()
     {
         ResetTrophies();
+
+        // test
+
+        WinTrophy("Trophy01");
+        WinTrophy("Trophy02");
+        WinTrophy("Trophy03");
+        WinTrophy("Trophy04");
+        WinTrophy("Trophy05");
+        WinTrophy("Trophy06");
+        WinTrophy("Trophy07");
+        WinTrophy("Trophy08");
+        WinTrophy("Trophy09");
+
         LoadTrophies();
     }
 
@@ -132,4 +145,8 @@ public class TrophyData : MonoBehaviour
         SaveTrophies();
     }
 
+    public void WinTrophy(string trophy)
+    {
+        AddTrophyToWonTrophies(trophy);
+    }
 }
