@@ -24,7 +24,7 @@ public class DialogueDatabase : MonoBehaviour
         dialogueDB.Add(new Dialogue(4, "Player", "This is Emily's desk.", "Search desk", "Do nothing"));
         dialogueDB.Add(new Dialogue(5, "Player", "This is Charlie's desk.", "Search desk", "Do nothing"));
         dialogueDB.Add(new Dialogue(6, "Player", "It's not a good idea to search people's desks with colleages in the room.", "Good call...", ""));
-        dialogueDB.Add(new Dialogue(7, "Emily", "Ugh, Monday already huh? What do you want?", "Where is everyone today?", "Say nothing"));
+        dialogueDB.Add(new Dialogue(7, "Jane", "Ugh, Monday already huh? What do you want?", "Where is everyone today?", "Say nothing"));
         dialogueDB.Add(new Dialogue(8, "John", "Ready for the big presentation today, mate?", "I was born ready!", "Not at all..."));
     }
 
@@ -47,7 +47,7 @@ public class DialogueDatabase : MonoBehaviour
                     name = name + " (Sales)";
                     break;
                 case "Jane":
-                    name = name + " (Customer Relations";
+                    name = name + " (Customer Relations)";
                     break;
                 case "Charlie":
                     name = name + " (Switchboard)";

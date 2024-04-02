@@ -102,7 +102,7 @@ public class Player : MonoBehaviour
                 interaction = 5;
                 break;
 
-            case "Emily":
+            case "Jane":
                 interaction = 7;
                 break;
 
