@@ -6,7 +6,7 @@ using UnityEngine;
 public class TrophyData : MonoBehaviour
 
 {
-    public GameObject T1, T2, T3, T4, T5, T6, T7, T8, T9;
+    public GameObject T1, T2, T3;
     public List<GameObject> trophyGameObjects = new List<GameObject>();
     public Dictionary<string, GameObject> Trophies = new Dictionary<string, GameObject>();
     public List<string> WonTrophies = new List<string>();
@@ -35,12 +35,6 @@ public class TrophyData : MonoBehaviour
         WinTrophy("Trophy01");
         WinTrophy("Trophy02");
         WinTrophy("Trophy03");
-        WinTrophy("Trophy04");
-        WinTrophy("Trophy05");
-        WinTrophy("Trophy06");
-        WinTrophy("Trophy07");
-        WinTrophy("Trophy08");
-        WinTrophy("Trophy09");
 
         LoadTrophies();
     }
@@ -49,7 +43,7 @@ public class TrophyData : MonoBehaviour
     {
         SetTrophyDictionary();
         WonTrophies.Clear();
-        trophyGameObjects.AddRange(new List<GameObject> { T1, T2, T3, T4, T5, T6, T7, T8, T9 });
+        trophyGameObjects.AddRange(new List<GameObject> { T1, T2, T3 });
         foreach (GameObject t in trophyGameObjects)
         {
             t.SetActive(false);
@@ -65,12 +59,6 @@ public class TrophyData : MonoBehaviour
         Trophies.Add("Trophy01", T1);
         Trophies.Add("Trophy02", T2);
         Trophies.Add("Trophy03", T3);
-        Trophies.Add("Trophy04", T4);
-        Trophies.Add("Trophy05", T5);
-        Trophies.Add("Trophy06", T6);
-        Trophies.Add("Trophy07", T7);
-        Trophies.Add("Trophy08", T8);
-        Trophies.Add("Trophy09", T9);
     }
 
     public void AddTrophyToWonTrophies(string trophy)
