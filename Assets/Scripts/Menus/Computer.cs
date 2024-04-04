@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class Computer : MonoBehaviour
 {
-    public GameObject computerPanel;
+    public GameObject computerPanel, interactionE;
     public bool nearComputer;
-    public TextMeshProUGUI interactionE, backText;
+    public TextMeshProUGUI backText;
     public SceneManagement sceneManagement;
 
     // Start is called before the first frame update
@@ -17,7 +17,7 @@ public class Computer : MonoBehaviour
         computerPanel.SetActive(false);
         nearComputer = false;
         if (interactionE != null)
-            interactionE.enabled = false;
+            interactionE.SetActive(false);
         if (backText != null)
             backText.enabled = false;
     }
@@ -42,14 +42,14 @@ public class Computer : MonoBehaviour
     {
         nearComputer = true;
         if (interactionE != null)
-            interactionE.enabled = true;
+            interactionE.SetActive(true);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         nearComputer = false;
         if (interactionE != null)
-            interactionE.enabled = false;
+            interactionE.SetActive(false);
     }
 
     public void StartGame()

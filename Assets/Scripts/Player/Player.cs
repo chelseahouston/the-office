@@ -77,30 +77,39 @@ public class Player : MonoBehaviour
         bossOfficePosition = new Vector3(-4.09f, -0.83f, 0f);
     }
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-            switch (collision.name)
+        switch (collision.name)
             {
-                case "JohnDesk":
+            case "JohnDesk":
                 interaction = 1;
                 break;
 
-                case "JaneDesk":
+            case "JaneDesk":
                 interaction = 2;
                 break;
 
-                case "SamDesk":
+            case "SamDesk":
                 interaction = 3;
                 break;
 
-                case "EmilyDesk":
+            case "EmilyDesk":
                 interaction = 4;
                 break;
 
-                case "CharlieDesk":
+            case "CharlieDesk":
                 interaction = 5;
                 break;
-            }
+
+            case "Jane":
+                interaction = 7;
+                break;
+
+            case "John":
+                interaction = 8;
+                break;
+        }
         }
 
     private void OnTriggerExit2D(Collider2D collision)

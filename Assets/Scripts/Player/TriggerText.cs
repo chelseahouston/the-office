@@ -8,19 +8,19 @@ using UnityEngine.UI;
 
 public class TriggerText : MonoBehaviour
 {
-    public TextMeshProUGUI thisText;
+    public GameObject thisText;
 
     // Start is called before the first frame update
     void Start()
     {
-        thisText.enabled = false;
+        thisText.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player" && thisText != null)
         {
-            thisText.enabled = true;
+            thisText.SetActive(true)    ;
         }
     }
 
@@ -29,7 +29,7 @@ public class TriggerText : MonoBehaviour
         if (collision.tag == "Player" && thisText != null)
         {
           
-            thisText.enabled = false;
+            thisText.SetActive(false);
         }
     }
 

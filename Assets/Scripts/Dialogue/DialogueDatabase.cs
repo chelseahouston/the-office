@@ -23,6 +23,45 @@ public class DialogueDatabase : MonoBehaviour
         dialogueDB.Add(new Dialogue(3, "Player", "This is Sam's desk.", "Search desk", "Do nothing"));
         dialogueDB.Add(new Dialogue(4, "Player", "This is Emily's desk.", "Search desk", "Do nothing"));
         dialogueDB.Add(new Dialogue(5, "Player", "This is Charlie's desk.", "Search desk", "Do nothing"));
+        dialogueDB.Add(new Dialogue(6, "Player", "It's not a good idea to search people's desks with colleages in the room.", "Good call...", ""));
+        dialogueDB.Add(new Dialogue(7, "Jane", "Ugh, Monday already huh? What do you want?", "Where is everyone today?", "Say nothing"));
+        dialogueDB.Add(new Dialogue(8, "John", "Ready for the big presentation today, mate?", "I was born ready!", "Not at all..."));
+    }
+
+    public string GetNameByID(int id)
+    {
+        string name = "";
+        foreach (var d in dialogueDB)
+        {
+            if (d.id == id)
+            {
+                name = d.personSpeaking;
+            }
+
+            switch (name)
+            {
+                case "Emily":
+                    name = name + " (Accounting)";
+                    break;
+                case "John":
+                    name = name + " (Sales)";
+                    break;
+                case "Jane":
+                    name = name + " (Customer Relations)";
+                    break;
+                case "Charlie":
+                    name = name + " (Switchboard)";
+                    break;
+                case "Sam":
+                    name = name + " (IT Support)";
+                    break;
+                case "Player":
+                    name = "";
+                    break;
+            }
+        }
+
+        return name;
     }
 
     public Sprite GetSpriteByID(int id)
@@ -31,21 +70,7 @@ public class DialogueDatabase : MonoBehaviour
         {
             if (d.id == id)
             {
-                switch (d.personSpeaking)
-                {
-                    case "Player":
-                        s = Resources.Load<Sprite>("Characters/SpeechImages/player");
-                        if (s != null)
-                        {
-                            Debug.Log("Sprite set to path: Characters/SpeechImages/player");
-                            Debug.Log(s.ToString());
-                        }
-                        else
-                        {
-                            Debug.Log("S is null");
-                        }
-                        break;
-                }
+                s = Resources.Load<Sprite>("Characters/SpeechImages/"+ d.personSpeaking.ToLower());
             }
 
         }
