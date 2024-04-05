@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.SearchService;
@@ -14,6 +15,7 @@ public class Player : MonoBehaviour
     public StopStartPlayerMovement playerMovement;
     public Vector3 cubiclePosition, mainOfficePosition, hallwayPosition, conferenceRoomPosition, bathroomPosition, cafePosition, bossOfficePosition;
     public SpeechInteraction speechInteraction;
+    public GameObject startMenu;
     public int interaction;
 
     private void Awake()
@@ -34,6 +36,7 @@ public class Player : MonoBehaviour
         SetStartingPositions();
         transform.position = cubiclePosition;
         interaction = 0;
+        startMenu = GameObject.Find("Panel");
     }
 
     // Update is called once per frame
@@ -41,23 +44,36 @@ public class Player : MonoBehaviour
     {
         if (playerMovement.moving)
         {
-            float horizontalInput = Input.GetAxisRaw("Horizontal");
-            float verticalInput = Input.GetAxisRaw("Vertical");
+            if (SceneManager.GetActiveScene().name == "StartCubicleScene")
+            {
+                MovePlayer();
+            }
 
-            Vector2 movement = new Vector2(horizontalInput, verticalInput);
-            movement.Normalize();
-
-            rb.velocity = movement * moveSpeed;
-
-            animator.SetFloat("Vertical", verticalInput);
-            animator.SetFloat("Horizontal", horizontalInput);
-            animator.SetFloat("Speed", movement.sqrMagnitude);
+            else if (speechInteraction != null && speechInteraction.dialogueOpen == false)
+            {
+                MovePlayer();
+            }
+            
+            if (Input.GetKeyDown(KeyCode.E) && interaction != 0)
+                {
+                    speechInteraction.Speech(interaction);
+                }
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && interaction!=0)
-        {
-            speechInteraction.Speech(interaction);
-        }
+    public void MovePlayer()
+    {
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        float verticalInput = Input.GetAxisRaw("Vertical");
+
+        Vector2 movement = new Vector2(horizontalInput, verticalInput);
+        movement.Normalize();
+
+        rb.velocity = movement * moveSpeed;
+
+        animator.SetFloat("Vertical", verticalInput);
+        animator.SetFloat("Horizontal", horizontalInput);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
     }
 
     public void setSpeechPanel()
