@@ -7,16 +7,20 @@ public class OptionSelector : MonoBehaviour
     public SpeechInteraction speechInteraction;
     private int currentIndex = 0; // index of currently selected option
 
-    private void Start()
+    private void OnEnable()
     {
         currentIndex = 0;
+        Debug.Log("Index = 0");
         foreach (GameObject border in borders)
         {
             if (borders[currentIndex] != border)
             {
                 border.SetActive(false);
             }
-
+            else
+            {
+                border.SetActive(true);
+            }
         }
     }
 
@@ -46,7 +50,8 @@ public class OptionSelector : MonoBehaviour
         {
             currentIndex--;
         }
-        borders[currentIndex].gameObject.SetActive(true);  
+        borders[currentIndex].gameObject.SetActive(true);
+        Debug.Log("Index highlighted = " + currentIndex);
     }
 
     void GoToNextOption()
@@ -60,6 +65,7 @@ public class OptionSelector : MonoBehaviour
             }
         }
         borders[currentIndex].gameObject.SetActive(true);
+        Debug.Log("Index highlighted = " + currentIndex);
     }
 
     void SelectCurrentOption()
@@ -67,6 +73,7 @@ public class OptionSelector : MonoBehaviour
         Debug.Log("Selected option: " + options[currentIndex].name);
         speechInteraction.SelectOption(options[currentIndex].name);
         currentIndex = 0;
+        Debug.Log("Index Set on Confirmation to 0");
     }
 
 }
