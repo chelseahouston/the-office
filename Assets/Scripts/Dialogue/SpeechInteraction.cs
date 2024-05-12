@@ -12,7 +12,8 @@ public class SpeechInteraction : MonoBehaviour
     public DialogueDatabase dialogueDatabase;
     public TypewriterEffect typeFX;
     public int id;
-    public bool coworkerpresent;
+    public bool coworkerpresent, dialogueOpen;
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class SpeechInteraction : MonoBehaviour
         dialogueDatabase = GameObject.Find("Data").GetComponent<DialogueDatabase>();
         speechPanel.SetActive(false);
         coworkerpresent = false;
+        dialogueOpen = false;
     }
 
     public void Speech(int id)
@@ -29,6 +31,7 @@ public class SpeechInteraction : MonoBehaviour
         if (id != 0)
         {
             speechPanel.SetActive(true);
+            dialogueOpen = true;
             charImg.sprite = dialogueDatabase.GetSpriteByID(id);
             if (charImg.sprite != null)
             {
@@ -70,6 +73,17 @@ public class SpeechInteraction : MonoBehaviour
             this.id = id;
             typeFX.StartTyping();
         }
+    }
+
+    public void SelectOption(string option)
+    {
+        if (option == "Option1")
+        {
+            Option1();
+        }
+        else { Option2(); }
+
+        dialogueOpen = false;
     }
 
     public void Option1()

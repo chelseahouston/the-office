@@ -78,4 +78,19 @@ public class Computer : MonoBehaviour
         if (backText != null)
             backText.enabled = false;
     }
+
+    public void SelectOption(string option)
+    {
+        switch (option) {
+            case "Start":
+                StartGame();
+                break;
+            case "Options":
+                // nothing rn
+                break;
+            case "Exit":
+                ExitGame();
+                break;
+        }
+    }
 }
