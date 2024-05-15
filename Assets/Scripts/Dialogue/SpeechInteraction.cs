@@ -12,7 +12,7 @@ public class SpeechInteraction : MonoBehaviour
     public DialogueDatabase dialogueDatabase;
     public TypewriterEffect typeFX;
     public int id;
-    public bool coworkerpresent, dialogueOpen;
+    public bool coworkerpresent, dialogueOpen, johnPresent;
 
 
     // Start is called before the first frame update
@@ -94,11 +94,13 @@ public class SpeechInteraction : MonoBehaviour
             DetectPeoplePresent();
             if (coworkerpresent) 
             { 
-                Speech(6); // cant search when coworers present!
+                Speech(6); // cant search when coworkers are present!
             }
         }else
         {
             // nothing yet...
+            // depending on whose desk it is
+            // switch statement for desk object collider tag
         }
 
     }
@@ -121,6 +123,19 @@ public class SpeechInteraction : MonoBehaviour
         {
             coworkerpresent = false;
             Debug.Log("NO coworker(s) around!");
+        }
+    }
+
+    public void DetectJohnPresent()
+    {
+        GameObject john = GameObject.Find("John");
+        if (john != null)
+        {
+            johnPresent = true;
+        }
+        else
+        {
+            johnPresent = false;
         }
     }
 
